@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 import DataItem from "./components/DataItem";
@@ -31,9 +31,6 @@ const App = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
   const handleAddData = () => {
     if (newData) {
       const currentDate = new Date().toLocaleString("en-US", {
