@@ -1,0 +1,35 @@
+{
+  // Formatting and linting
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports", // VSCode
+    "source.organizeImports", // VSCode
+    "source.formatDocument", // Extension: Format Code Action
+    "source.fixAll.eslint" // Extension: ESLint
+  ],
+  "eslint.enable": true,
+  "eslint.format.enable": false, // Enabled via codeActionsOnSave (known order)
+  "eslint.lintTask.enable": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "eslint.nodePath": "./node_modules",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true, // Enabled via codeActionsOnSave (known order)
+  "editor.formatOnPaste": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "javascript.preferences.importModuleSpecifier": "shortest",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "terminal.integrated.defaultProfile.linux": "zsh"
+}
