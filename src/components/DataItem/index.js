@@ -60,7 +60,7 @@ const DataItem = ({
             <Row align={"middle"}>
               <Col xs={14} sm={14} md={12} lg={12} xl={12} xxl={12}>
                 <Row align={"middle"}>
-                  <Col span={10}>
+                  <Col span={12}>
                     <Row align={"middle"}>
                       <Col xs={20} sm={20} md={20} lg={20} xl={20} xxl={14}>
                         <Row align={"middle"}>
