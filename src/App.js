@@ -2,15 +2,15 @@ import { Col, Row } from "antd";
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
-import DataItem from "./components/DataItem";
-import DeleteConfirmationModal from "./components/DeleteConfirmationModal";
+import DataItem from "./components/CardItem";
 import HeaderComponent from "./components/Header";
+import DeleteModal from "./components/Modal";
 
 // redux hooks
 import { useDispatch, useSelector } from "react-redux";
 import { addData, deleteData, dragEnd, editData } from "./actions";
 
-import Logo from "./assets/images/logo.png";
+import Logo from "./assets/images/cardicon.png";
 import {
   AddInputimg,
   DividerBottomApp,
@@ -20,7 +20,7 @@ import {
   StyledDiv,
   StyledLayout,
   StyledRowApp,
-} from "./common/styledComponents";
+} from "./common/globalStyles";
 
 const App = () => {
   const [isAddingData, setIsAddingData] = useState(false);
@@ -187,7 +187,7 @@ const App = () => {
         </DragDropContext>
       </StyledContent>
 
-      <DeleteConfirmationModal
+      <DeleteModal
         visible={deleteModalVisible}
         handleConfirmDelete={handleConfirmDelete}
         handleCancelDelete={handleCancelDelete}

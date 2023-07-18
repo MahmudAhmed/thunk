@@ -1,6 +1,6 @@
 import { Col, Image } from "antd";
 import React from "react";
-import MyIcon from "../assets/images/Question.svg";
+import MyIcon from "../../assets/images/Question.svg";
 import {
   ModalButtonNo,
   ModalButtonYes,
@@ -9,18 +9,23 @@ import {
   ModalRow,
   ModalTitle,
   StyledModal,
-} from "../common/styledComponents";
+} from "./style";
 
-const DeleteConfirmationModal = ({
+const DeleteModal = ({
   visible,
   handleConfirmDelete,
   handleCancelDelete,
 }) => {
+  const modalTitleText = "Are you sure you want to delete this project?";
+  const modalCancelText = "No";
+  const modalOkText = "Yes";
+  const modalDescText = "This action can't be undone";
+
   return (
     <StyledModal
       closable={false}
       title={
-        <ModalRow align={"middle"} justify={"start"}>
+        <ModalRow align="middle" justify="start">
           <Col>
             <ModalImg
               src={MyIcon}
@@ -29,9 +34,7 @@ const DeleteConfirmationModal = ({
               height={22}
               preview={false}
             />
-            <ModalTitle>
-              Are you sure you want to delete this project?
-            </ModalTitle>
+            <ModalTitle>{modalTitleText}</ModalTitle>
           </Col>
         </ModalRow>
       }
@@ -39,20 +42,20 @@ const DeleteConfirmationModal = ({
       onCancel={handleCancelDelete}
       onOk={handleConfirmDelete}
       icon={<Image src={MyIcon} alt="Delete Icon" />}
-      cancelText="No"
-      okText="Yes"
+      cancelText={modalCancelText}
+      okText={modalOkText}
       footer={[
         <ModalButtonNo key="cancel" onClick={handleCancelDelete}>
-          No
+          {modalCancelText}
         </ModalButtonNo>,
         <ModalButtonYes key="ok" onClick={handleConfirmDelete}>
-          Yes
+          {modalOkText}
         </ModalButtonYes>,
       ]}
     >
-      <ModalDesc>This action can't be undone</ModalDesc>
+      <ModalDesc>{modalDescText}</ModalDesc>
     </StyledModal>
   );
 };
 
-export default DeleteConfirmationModal;
+export default DeleteModal;
