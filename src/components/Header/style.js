@@ -36,7 +36,7 @@ export const StyledButton = styled(Button)`
   && {
     position: absolute;
     right: -15px;
-    bottom: 0;
+    bottom: -15px;
     margin-bottom: -30px;
     background-color: #4a475f;
     height: 60px;
